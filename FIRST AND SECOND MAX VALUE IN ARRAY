@@ -1,4 +1,4 @@
-MAXIMUM VALUE IN TNE ARRAY
+FIRST & SECOND MAXIMUM VALUE IN TNE ARRAY
 
 import java.util.*;
 public class Main
@@ -25,3 +25,30 @@ public class Main
 	        System.out.println(firstmax+ " "+secondmax);
 	    }
 	}
+
+
+OR THE OTHER SOLUTION MAYBE 
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int arr[] = new int[n];
+	    int firstmax = Integer.MIN_VALUE;
+	    int secondmax = Integer.MIN_VALUE;
+	    for(int i = 0;i<n;i++){
+	        arr[i] = sc.nextInt();
+	        if(arr[i]>firstmax){
+	            secondmax = firstmax;
+	             firstmax = arr[i];
+	        }else if(arr[i]>secondmax && arr[i]!=firstmax){
+	            secondmax=arr[i];
+	        }
+	    }
+	    System.out.println(firstmax+ " "+secondmax);
+	    
+	}
+}
+
