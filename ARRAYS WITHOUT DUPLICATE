@@ -1,27 +1,29 @@
 ARRAYS WITHOUT DUPLICATE
 
 import java.util.*;
-public class Main
-{
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
-		int arr[] = new int[a];
-		int temp[] = new int[a];
-		Arrays.sort(arr);
-		int j = 0;
-		for(int i =0 ;i<a;i++){
-		    arr[i] = sc.nextInt();
-		}
-		for(int i = 0;i<a-1;i++){
-		    if(arr[i]!=arr[i+1]){
-		       temp[j] = arr[i];
-		       j++;
-		    }
-		}
-		temp[j] = arr[a-1];
-		for(int i = 0;i<=j;i++){
-		    System.out.print(temp[i]+" ");
-		}
-	}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            int repeated = 0;
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    repeated = 1;
+                    break;
+                }
+            }
+
+            if (repeated == 0) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
 }
