@@ -1,0 +1,28 @@
+FIND THE MISSING NUMBER IN THE ARRAY FROM 1 TO 10
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int arr[] = new int[10];
+		Arrays.fill(arr,11);
+		for(int i = 0;i<a;i++){
+		    arr[i] = sc.nextInt();
+		}
+		if(a == 10){
+		    System.out.println("no missing number");
+		    return;
+		}
+		Arrays.sort(arr);
+		int s = 0;
+		for(int i = 1;i<=10;i++){
+		    if(arr[s]!=i){
+		        System.out.print(i+" ");
+		    }else{
+		        s++;
+		    }
+		}
+	}
+}
